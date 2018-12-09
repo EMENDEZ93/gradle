@@ -7,10 +7,27 @@ task variables {
 
     ext.factory = "em"
 
+    println "run task BEFORE dolast"
+    
+    doLast {
+        println "run task ON dolast"
+    }
+
 }
+
+variables.doLast {
+    println "run OUT variable task"
+}
+
+variables.doLast {
+    String java = "Java Variable"
+    println "doLast using java variable -> " + java
+}
+
 
 task compile << {
     println '************************* Gradle *************************'
     println 'Projecto creado por ' + variables.created
     println variables.email
 }
+ 
