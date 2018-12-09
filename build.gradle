@@ -1,5 +1,16 @@
-task compile << {
-    println '* gradle *'
+task variables {
+
+    ext {
+        created = "Edwin Mendez"
+        email = "edwin.mendez@ceiba.com"
+    }
+
+    ext.factory = "em"
+
 }
 
-
+task compile << {
+    println '************************* Gradle *************************'
+    println 'Projecto creado por ' + variables.created
+    println variables.email
+}
