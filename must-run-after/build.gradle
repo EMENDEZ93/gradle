@@ -1,0 +1,9 @@
+task a << {
+    println 'run a task'
+}
+
+task b << {
+    println 'run b task'
+}
+
+b.mustRunAfter a 
