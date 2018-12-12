@@ -1,0 +1,15 @@
+task a << {
+    println 'a task is running'
+}
+
+task b {
+    dependsOn 'a'
+
+    doLast {
+        println 'b task is running'
+    }
+}
+
+task c(dependsOn:b) << {
+    println 'c task is running'
+}
