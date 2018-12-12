@@ -1,0 +1,23 @@
+task tests {
+
+    doFirst {
+        println 'tests-doFirs is running'
+    }
+
+    doLast {
+        println 'tests-doLast is running'
+    }
+
+}
+
+task tests2(dependsOn: tests) {
+
+    doFirst {
+        println 'tests2-doFirs is running'
+    }
+
+    doLast {
+        println 'tests2-doLast is running'
+    }
+
+}
