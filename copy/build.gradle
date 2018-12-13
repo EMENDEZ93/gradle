@@ -1,0 +1,13 @@
+task createCopyFolder << {
+    new File('copy-folder').mkdirs()
+}
+
+task copiar (type: Copy, dependsOn: createCopyFolder) {
+
+    from 'origin'
+    into 'copy-folder'
+
+    //include '*.txt'
+    exclude '*.bat'
+
+}
