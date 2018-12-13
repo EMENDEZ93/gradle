@@ -1,0 +1,16 @@
+task compile {
+    doLast {
+        println 'compile...'
+    }
+}
+
+task building {
+
+    onlyIf{
+        compile.didWork
+    }
+
+    doLast {
+        println 'build...'
+    }
+}
